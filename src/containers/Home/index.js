@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 import HomePic from "../../assets/homepic.svg";
@@ -17,7 +17,7 @@ import {
 
 const App = () => {
   const [orders, setOrders] = useState([]);
-  const history = useHistory();
+  const navigate = useNavigate();
   const inputOrder = useRef();
   const inputClientName = useRef();
   //const ordersClients = [];
@@ -30,7 +30,7 @@ const App = () => {
 
     setOrders([...orders, newOrder]);
 
-    history.push('/order')
+    navigate('/order')
   }
 
   
