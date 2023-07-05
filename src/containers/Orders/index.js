@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 import BagBurguer from "../../assets/bagburguer.svg";
@@ -18,7 +18,7 @@ import {
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchOrder(){
@@ -40,7 +40,7 @@ const Orders = () => {
   }
 
   function goBackPage() {
-    history.push('/')
+    navigate('/')
   }
 
   return (
